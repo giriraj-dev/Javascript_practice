@@ -107,7 +107,6 @@ function vowel(str) {
 }
 console.log(vowel("sdfghjklzxcvbnmqwrtypaeiou"));
 
-
 //For a given array print the square of each number
 
 arr = [9, 5, 7, 2];
@@ -182,3 +181,102 @@ const object = {
 };
 
 object.printmarks();
+
+/*--------callBack & callBack hell--------*/
+
+function getData(dataId, getNextData) {
+  setTimeout(() => {
+    console.log("data=", dataId);
+    if (getNextData) {
+      getNextData();
+    }
+  }, 2000);
+}
+
+console.log("fetching data.......");
+getData(1, () => {
+  console.log("fetching next data.......");
+  getData(2, () => {
+    console.log("fetching last data.......");
+    getData(3);
+  });
+});
+
+/*--------Promise method to handle callback hell--------*/
+
+function asyncfunc1() {
+  return new Promise((resolve, result) => {
+    setTimeout(() => {
+      console.log("data1");
+      resolve("success");
+    }, 3000);
+  });
+}
+
+function asyncfunc2() {
+ return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("data2");
+      resolve("success");
+    }, 3000);
+  });
+}
+
+function asyncfunc3() {
+  return new Promise((resolve, reject) => {
+     setTimeout(() => {
+       console.log("data3");
+       resolve("success");
+     }, 3000);
+   });
+ }
+
+console.log("fetching data1......");
+let p1 = asyncfunc1();
+p1.then((res) => {
+  console.log("fetching data2......");
+  let p2 = asyncfunc2();
+  p2.then((res) => {
+    console.log("fetching data3......");
+    let p3 = asyncfunc3();
+    p3.then((res) => {});
+  });
+});
+
+/*--------Async-await method to handle callback hell--------*/
+
+function api(){
+  return new position ((resolve,reject)=>{
+    setTimeout(()=>{
+      console.log("weater data");
+      resolve(200);
+    },2000);
+  });
+}
+
+function getData(dataId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("data=", dataId);
+      resolve("success");
+      },1000);
+  });
+}
+
+async function getAllData(){
+  
+  console.log("fetching data1......");
+  await getData("hello");
+  console.log("fetching data2......");
+  await getData("are you there?");
+  console.log("fetching data3......");
+  await getData("yes I'm!!!");
+  console.log("fetching data4......");
+  await getData("see you soon then.");
+  console.log("fetching data5......");
+  await getData("yes! ok bye.");
+}
+
+getAllData();
+
+ 
