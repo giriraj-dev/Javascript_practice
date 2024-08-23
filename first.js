@@ -281,71 +281,71 @@
 // getAllData();
 // console.log();
 
-// let newBtn = document.createElement("button");
-// newBtn.innerText = "Click Me!";
+let newBtn = document.createElement("button");
+newBtn.innerText = "Click Me!";
 
-// let newText = document.createElement("p");
-// newText.innerText="hey fam!!!!!!";
+let newText = document.createElement("p");
+newText.innerText="hey fam!!!!!!";
+newText.style.color="yellow";
+
+newBtn.style.color = "white";
+newBtn.style.backgroundColor = "red";
+
+document.body.prepend(newBtn);
+document.body.append(newText);
+let btn1 = document.querySelector("button");
+btn1.onclick=(e)=>{
+  alert("hello");
+      console.log(e.type);
+      console.log(e.target);
+      console.log(e.clientX);
+      console.log(e.clientY);
+};
+////
+
+document.querySelector("#btn3").ondblclick=(e)=>
+  {alert('toodles!!');
+   console.log(e.type);
+  console.log(e.target);
+  console.log(e.clientX);
+  console.log(e.clientY);};
+
+//////
+
+let mouse = document.querySelector("div");
+mouse.style.color="yellow"
+mouse.onmouseover=(e)=>{
+  console.log(e.type);
+      console.log(e.target);
+      console.log(e.clientX);
+      console.log(e.clientY);
+    mouse.onclick=(e)=>{
+      alert("good morning!!");
+      console.log(e.type);
+      console.log(e.target);
+      console.log(e.clientX);
+      console.log(e.clientY);
+    }
+    mouse.style.fontSize="40px";
+};
+ mouse.onmouseout=(e)=>{
+  mouse.style.fontSize="18px";
+  mouse.style.color="black";
+      console.log(e.type);
+      console.log(e.target);
+      console.log(e.clientX);
+      console.log(e.clientY);
+ }
 
 
-// newBtn.style.color = "white";
-// newBtn.style.backgroundColor = "red";
+ let btn6 = document.createElement("button");
+ btn6.innerText="CLICK HERE";
 
-// document.body.prepend(newBtn);
-// document.body.append(newText);
-// let btn1 = document.querySelector("button");
-// btn1.onclick=(e)=>{
-//   alert("hello");
-//       console.log(e.type);
-//       console.log(e.target);
-//       console.log(e.clientX);
-//       console.log(e.clientY);
-// };
-// ////
+ document.body.prepend(btn6);
 
-// document.querySelector("#btn3").ondblclick=(e)=>
-//   {alert('toodles!!');
-//    console.log(e.type);
-//   console.log(e.target);
-//   console.log(e.clientX);
-//   console.log(e.clientY);};
-
-// //////
-
-// let mouse = document.querySelector("div");
-
-// mouse.onmouseover=(e)=>{
-//   console.log(e.type);
-//       console.log(e.target);
-//       console.log(e.clientX);
-//       console.log(e.clientY);
-//     mouse.onclick=(e)=>{
-//       alert("good morning!!");
-//       console.log(e.type);
-//       console.log(e.target);
-//       console.log(e.clientX);
-//       console.log(e.clientY);
-//     }
-//     mouse.style.fontSize="40px";
-// };
-//  mouse.onmouseout=(e)=>{
-//   mouse.style.fontSize="18px";
-//   mouse.style.color="black";
-//       console.log(e.type);
-//       console.log(e.target);
-//       console.log(e.clientX);
-//       console.log(e.clientY);
-//  }
-
-
-//  let btn6 = document.createElement("button");
-//  btn6.innerText="CLICK HERE";
-
-//  document.body.prepend(btn6);
-
-//  btn6.addEventListener("click",()=>{
-//   btn6.style.fontSize="30px";
-//  })
+ btn6.addEventListener("click",()=>{
+  btn6.style.fontSize="30px";
+ })
 
 let btn = document.createElement("button");
 btn.innerText="Click for dark mode";
